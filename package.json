@@ -1,0 +1,41 @@
+{
+  "name": "seo-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "postbuild": "react-snap"
+  },
+  "reactSnap": {
+    "source": "./dist",
+    "fixWebpackChunksIssue": false,
+    "include": [
+      "/",
+      "/auth/status",
+      "/auth/process",
+      "/sign/status",
+      "/sign/process"
+    ],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
+  },
+  "dependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-helmet-async": "^1.3.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.48",
+    "@types/react-dom": "^17.0.17",
+    "@vitejs/plugin-react": "^2.0.1",
+    "react-snap": "^1.23.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.7"
+  }
+}
